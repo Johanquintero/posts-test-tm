@@ -137,7 +137,7 @@ export default function Home() {
       </div>
 
       {/* //dialog */}
-      <div className='card-box' style={{ position: "fixed", display: modalOpen ? "none" : "flex", justifyContent: "center", width: "auto", zIndex: 1, top: "40vh", left:window.innerWidth <= 700 ? "10vh" : "80vh", backgroundColor: "#fff" }}>
+      <div className='card-box' style={{ position: "fixed", display: modalOpen ? "none" : "flex", justifyContent: "center", width: "auto", zIndex: 1, top: "40vh", left:window.innerWidth <= 700 ? "8vh" : "80vh", backgroundColor: "#fff" }}>
         <div className='container' style={{ width: "100%" }} >
           <div style={{position:"absolute", width: "100%", display: "flex", justifyContent: "end", right:10 }}>
             <img alt='close' src={closeIcon} width={30} onClick={() => setModalOpen(!modalOpen)} style={{ padding: 5, cursor: "pointer" }} />

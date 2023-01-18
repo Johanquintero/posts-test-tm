@@ -6,8 +6,8 @@ export default function Navbar() {
     return (
         <div className='navbar'>
             <ul style={{height:50,color:"#fff",display:"flex" ,justifyContent:"space-around",alignItems:"center"}}>
-                <li><img src={user.picture} alt={user.name} width={50}/></li>
-                <li><h2 style={{fontSize:"3vh"}}>{user.name}</h2></li>
+                <li hidden={window.innerWidth <= 700 ? true : false}><img src={user.picture} alt={user.name} width={50}/></li>
+                <li hidden={window.innerWidth <= 700 ? true : false}><h2 style={{fontSize: window.innerWidth <= 700 ? "0.7em": "1.5em"}}>{user.name}</h2></li>
                 <li><p>{user.email}</p></li>
 
                 <button className='button btn-logout' onClick={() => logout({ returnTo: window.location.origin })}>
