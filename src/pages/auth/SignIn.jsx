@@ -5,7 +5,7 @@ export default function SignIn() {
   const { loginWithRedirect } = useAuth0();
 
   return (
-    <div className="login" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+    <div className="login" style={{ display: "flex", justifyContent: "center", alignItems: "center",height:"100vh"}}>
       <div className="container">
         <button style={{ cursor: "pointer" }} onClick={() => loginWithRedirect()}>
           <span>Iniciar Sesion</span>

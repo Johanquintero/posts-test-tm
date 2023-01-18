@@ -87,7 +87,7 @@ export default function Home() {
                 </option>
               })}
             </select>
-            <img src={reloadIcon} width={20} style={{ margin: 10, cursor: "pointer" }} onClick={() => setPosts(postsOld)} />
+            <img src={reloadIcon} alt="iconReload" width={20} style={{ margin: 10, cursor: "pointer" }} onClick={() => setPosts(postsOld)} />
           </div>
 
           {loading ? (
@@ -100,7 +100,7 @@ export default function Home() {
 
                 <div className='col-1' style={{ textAlign: "center", padding: 10, borderRight: "1px solid" }}>
                   <h6>USER POST</h6>
-                  <img src={post.owner.picture} alt="userPost" width={100} height={100} onClick={() => { setModalOpen(!modalOpen); setInfoOwner(post.owner) }} /><br />
+                  <img src={post.owner.picture} alt="userPost" width={100} height={100} style={{cursor:"pointer"}} onClick={() => { setModalOpen(!modalOpen); setInfoOwner(post.owner) }} /><br />
                   <span>{`${post.owner.firstName} ${post.owner.lastName}`}</span>
                 </div>
 
@@ -121,7 +121,7 @@ export default function Home() {
               </div>
 
               <div className="row" style={{ display: "inline-flex", width: "100%" }}>
-                <span style={{ display: "flex", justifyContent: "center", alignItems: "center" }}><img src={likeIcon} width={30} style={{ padding: 10 }} />{post.likes}</span>
+                <span style={{ display: "flex", justifyContent: "center", alignItems: "center" }}><img src={likeIcon} alt="Likes" width={30} style={{ padding: 10 }} />{post.likes}</span>
               </div>
 
             </div>

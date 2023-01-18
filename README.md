@@ -12,4 +12,6 @@ In the project directory, you can run:
 ### `npm start`
  Correr el proyecto de react
 
+ Tener en cuenta el .env para correr el api route  y la key del crypto-js para almacenar informacion del usuario segura
+
 
