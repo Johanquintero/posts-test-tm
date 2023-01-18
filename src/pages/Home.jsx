@@ -101,7 +101,7 @@ export default function Home() {
 
                 <div className='col-1' style={{ textAlign: "center", padding: 10, borderRight: "1px solid" }}>
                   <h6>USER POST</h6>
-                  <img src={post.owner.picture} alt="userPost" width={100} height={100} style={{ cursor: "pointer" }} onClick={() => { setModalOpen(!modalOpen); setInfoOwner(post.owner) }} /><br />
+                  <img src={post.owner.picture} alt="userPost" width={window.innerWidth <= 700 ? 70 : 100} height={100} style={{ cursor: "pointer" }} onClick={() => { setModalOpen(!modalOpen); setInfoOwner(post.owner) }} /><br />
                   <span>{`${post.owner.firstName} ${post.owner.lastName}`}</span>
                 </div>
 
