@@ -7,7 +7,7 @@ export default function Navbar() {
         <div className='navbar'>
             <ul style={{height:50,color:"#fff",display:"flex" ,justifyContent:"space-around",alignItems:"center"}}>
                 <li><img src={user.picture} alt={user.name} width={50}/></li>
-                <li><h2>{user.name}</h2></li>
+                <li><h2 style={{fontSize:"3vh"}}>{user.name}</h2></li>
                 <li><p>{user.email}</p></li>
 
                 <button className='button btn-logout' onClick={() => logout({ returnTo: window.location.origin })}>

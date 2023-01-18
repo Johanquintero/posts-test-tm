@@ -3,6 +3,7 @@ import Navbar from '../layout/Navbar'
 import apiCli from '../api/apiService'
 import likeIcon from '../img/like.png'
 import reloadIcon from '../img/reload.png'
+import closeIcon from '../img/close.png'
 
 export default function Home() {
   const [posts, setPosts] = React.useState([]);
@@ -61,7 +62,7 @@ export default function Home() {
   React.useEffect(() => {
     getPosts();
     // eslint-disable-next-line
-  }, [modalOpen])
+  }, [])
 
 
   return (
@@ -100,7 +101,7 @@ export default function Home() {
 
                 <div className='col-1' style={{ textAlign: "center", padding: 10, borderRight: "1px solid" }}>
                   <h6>USER POST</h6>
-                  <img src={post.owner.picture} alt="userPost" width={100} height={100} style={{cursor:"pointer"}} onClick={() => { setModalOpen(!modalOpen); setInfoOwner(post.owner) }} /><br />
+                  <img src={post.owner.picture} alt="userPost" width={100} height={100} style={{ cursor: "pointer" }} onClick={() => { setModalOpen(!modalOpen); setInfoOwner(post.owner) }} /><br />
                   <span>{`${post.owner.firstName} ${post.owner.lastName}`}</span>
                 </div>
 
@@ -136,17 +137,17 @@ export default function Home() {
       </div>
 
       {/* //dialog */}
-      <div className='card' style={{ position: "fixed", display: modalOpen ? "none" : "flex", justifyContent: "center", width: "auto", zIndex: 1, top: "40%", left: "40%", backgroundColor: "#fff" }}>
+      <div className='card-box' style={{ position: "fixed", display: modalOpen ? "none" : "flex", justifyContent: "center", width: "auto", zIndex: 1, top: "40%", left: "40%", backgroundColor: "#fff" }}>
         <div className='container' style={{ width: "100%" }} >
-          <div style={{ width: "100%", display: "flex", justifyContent: "end" }}>
-            <button onClick={() => setModalOpen(!modalOpen)}>⨉</button>
+          <div style={{position:"absolute", width: "100%", display: "flex", justifyContent: "end", right:10 }}>
+            <img alt='close' src={closeIcon} width={30} onClick={() => setModalOpen(!modalOpen)} style={{ padding: 5, cursor: "pointer" }} />
           </div>
 
-          <div style={{ width: "100%", display: "flex" }}>
+          <div style={{ width: "100%", display: "flex",padding:15 }}>
             <div style={{ textAlign: "center" }}>
               <p>ID : {infoOwner.id}</p>
               <img src={infoOwner.picture} alt="userPost" width={100} height={100} /><br />
-              <span>{`${infoOwner.title}.  ${infoOwner.firstName} ${infoOwner.lastName}`}</span>
+              <span style={{fontWeight:"bold",fontSize:"1.2em"}}>{`${infoOwner.title}.  ${infoOwner.firstName} ${infoOwner.lastName}`}</span>
             </div>
           </div>
 
